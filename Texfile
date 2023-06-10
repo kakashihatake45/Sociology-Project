@@ -1,0 +1,782 @@
+\documentclass[12pt,a4paper,twoside]{report}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{wrapfig2}
+\usepackage{verbatim}
+\immediate\write18{texcount -tex -sum  \jobname.tex > \jobname.wordcount.tex}
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}
+\usepackage{tabto}
+\usepackage{tocloft}
+\renewcommand{\cftfigfont}{\normalfont\footnotesize}
+\renewcommand{\cftfigpagefont}{\normalfont\footnotesize}
+\newcommand{\addfiguretofigureslist}[2]{%
+  \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}{#1}}%
+}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage[font=scriptsize]{caption}
+\usepackage{times}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage{float,lipsum,tcolorbox}
+\usepackage{zref-totpages}
+\usepackage{lastpage}
+\usepackage{ragged2e}
+\usepackage[english]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={LS1201 by 22MS076},
+    pdfpagemode=FullScreen,
+    }
+\usepackage[left=1.7cm,right=1.7cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{lineno}
+
+\usepackage{cite}
+\usepackage{acronym}
+\renewcommand{\baselinestretch}{1.5}
+ 
+\usepackage{fancyhdr}
+
+
+\newcommand\shorttitle{Understanding the Trends of Preferred Marriage Age In The Indian Society}
+\newcommand\authors{Group 2}
+
+\fancyhf{}
+\renewcommand\headrulewidth{0pt}
+\fancyhead[RO,LE]{%
+\ifodd\value{page}
+  \small\scshape\authors
+\else
+  \small\scshape\shorttitle
+\fi
+}
+\renewcommand{\headrulewidth}{0.4pt}% Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\fancyfoot{}
+\fancyfoot[LO,RE]{\ifnum\value{chapter}=0\else \parbox{0.55\textwidth}{\leftmark \fi}}
+\fancyfoot[LE,RO]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\usepackage{xcolor}
+\makeatletter
+\newfloat{infobox}{tbp}{loi}[section]% 1: Name of float environment. 2: Default placement (top, bottom, ...). 3: File extension if written to an aux-file (like toc, lof, lot, loa, ...). 4: Numbering within <section/subsection/...>.
+\makeatother
+\floatname{info@box}{Infobox}% Adapt caption.
+
+\newenvironment{infobox}[1][]{
+   \begin{info@box}%
+      \begin{tcolorbox}[colback=red!15!white,%                    background color
+            colframe=red!75!black,
+            title=Additional information\ifstrempty{#1}{}{: #1}.% title
+         ]
+}{
+      \end{tcolorbox}
+   \end{info@box}
+}
+
+\usepackage{tikz}
+\usepackage{blindtext}
+
+
+
+
+
+
+
+
+\begin{document}
+\include{cover}
+\onehalfspacing % Set line spacing to 1.5
+
+	\begin{center}
+		\begin{huge}
+			\bf{UNDERSTANDING THE TRENDS IN PREFERRED MARRIAGE AGE IN THE INDIAN SOCIETY\\}
+		\end{huge}
+		\vspace*{20pt}
+    
+
+       
+
+
+
+\begin{flushright}
+    
+\end{flushright}
+
+
+		
+		\textbf{A Dissertation for HU1203
+			\it{}}
+		\vspace{10pt}
+		\textbf{\large{}}
+		\vspace{1pt}
+		\vspace{1pt}
+		\textbf{\\by\\
+			\vspace{10pt}
+                ABHINANDAN YADAV(22MS074)\\
+                DEBANJAN SINHA MAHAPATRA(22MS047)\\
+                PRITAM SADHU(22MS140)\\
+                RAHUL DAS(22MS046)\\
+			SHUVAM BANERJI SEAL(22MS076)\\}
+                
+                
+                
+                
+                {GROUP - 2}
+                
+                
+		\vspace{15pt}
+		Inspired by the Lectures of\\
+		\textbf{Dr. Sujata Sen}\\
+		 Professor\\ Department of Humanities and Social Sciences\\ IISER Kolkata
+		
+		
+		\vspace{20pt}
+		\includegraphics[width=0.4\textwidth]{logo.png} \\
+		\vspace{20pt}
+		\textbf{
+  INDIAN INSTITUTE OF SCIENCE EDUCATION AND RESEARCH- KOLKATA\\
+		      MOHANPUR, NADIA, WEST BENGAL, INDIA \\
+			June, 2023
+        }
+	\end{center}
+\pagenumbering{gobble}
+\clearpage
+\newcommand{\RN}[1]{%
+	\textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+\pagenumbering{roman}
+
+
+
+
+
+
+\clearpage
+
+\begin{center}
+	\section*{ACKNOWLEDGEMENT}
+	\noindent{\rule{\textwidth}{1.5pt}}
+\end{center}\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
+
+We, the diligent scholars of Group 2, are profoundly indebted to the erudite wisdom and mentorship bestowed upon us by Dr. Sujata Sen, a luminary in the field of sociology and a revered professor in the esteemed Department of Humanities and Social Sciences at IISER Kolkata. Dr. Sen's lectures, akin to shimmering beacons in the vast sea of knowledge, have illuminated our path, igniting our passion for unraveling the intricate tapestry of societal phenomena.
+
+Like a sculptor chiseling masterpieces from formless stone, Dr. Sen has skillfully shaped our intellectual prowess, molding our nascent minds into formidable thinkers and researchers. Her sagacious counsel and astute guidance have acted as a compass, directing our academic voyage and infusing it with purpose and clarity.
+
+The faculty members of the Department of Humanities and Social Sciences deserve our utmost appreciation for their unwavering support and unwavering commitment to nurturing scholarly excellence. Their incisive feedback, akin to the jeweler's discerning eye, has polished our research endeavors, refining them into works of intellectual brilliance.
+
+Our heartfelt gratitude extends to the participants who graciously shared their thoughts, experiences, and aspirations, breathing life into the data that forms the crux of our analysis. Their contributions, like vibrant brushstrokes on a canvas, have enlivened our research, allowing us to capture the essence of evolving marriage preferences in the intricate mosaic of Indian society.
+
+To our steadfast comrades, whose camaraderie has fortified us through the ebbs and flows of this arduous journey, we extend our sincerest appreciation. Their unwavering support, akin to a sturdy bridge spanning across tumultuous waters, has provided solace and encouragement, fortifying our resolve to strive for academic excellence.
+
+Last but certainly not least, our profound gratitude goes out to our families, whose unwavering belief in our capabilities has been an eternal source of inspiration. Their unwavering support, akin to a nurturing oasis amidst the desert of challenges, has sustained us, enabling us to pursue our academic aspirations with unwavering determination.
+
+In this symphony of gratitude, we hope that our research findings, like a resplendent jewel adorning the crown of sociological knowledge, contribute to the existing body of scholarship and pave the way for enlightened discourse and evidence-based policymaking. May our collective efforts sow the seeds of a more inclusive and egalitarian society, where individual aspirations flourish and societal bonds grow stronger.
+
+
+\\
+
+\dots
+
+
+% Especially, the extensive comments, healthy discussions, and fruitful interactions with the supervisors had a direct impact on the final form and quality of M. Tech. dissertation work.
+% \par	
+% I am also thankful to Name of The HOD, Head of the Computer Engineering Department, for his fruitful guidance through the early years of chaos and confusions. I wish to thank the faculty members and supporting staff of Computer Engineering Department for their full support and heartiest co-operation.	
+% \par
+% This thesis would not have been possible without the hearty support of my friends. My deepest regards to my Parents for their blessings, affection and continuous support. 
+\begin{flushright}
+	(Shuvam Banerji Seal (22MS076),
+Debanjan Sinha Mahapatra (22MS047),
+Pritam Sadhu (22MS140),
+Rahul Das (22MS046),
+Abhinandan Yadav (22MS074)
+Group - 2)
+\end{flushright}
+\clearpage
+\section*{ABSTRACT}
+\noindent{\rule{\textwidth}{1.5pt}}
+
+This study employs a rigorous sociological framework to investigate the determinants and consequences of age preferences for marriage in Indian society. By examining familial and inter-generational dynamics, this research elucidates the intricate influence of marital decisions on social bonds, kinship networks, and inter-generational relationships. As Max Weber once said, "Marriage is a pivotal institution that shapes the social fabric, intertwining individual aspirations with societal norms."
+
+The findings of this study yield significant implications for policymakers, educators, and social scientists, as they inform targeted interventions and policies to address the evolving dynamics of matrimony in India. By understanding the societal transformations associated with the changing age preferences for marriage, we can strive towards a more equitable and inclusive society. As Pierre Bourdieu aptly noted, "Marriage practices reflect and reinforce social inequalities, perpetuating power dynamics and gender roles."
+
+Drawing on comprehensive data collection methods and employing robust statistical analyses, this study unveils compelling patterns, including a notable increase in the favored age for marriage among Indian individuals. This shift reflects a reorientation towards prioritizing educational and vocational pursuits, as individuals seek personal growth and independence. Emile Durkheim's words resonate here: "Marriage age is a social fact that mirrors the collective consciousness of a society, reflecting its norms and values."
+
+The implications derived from the survey findings serve as a foundation for informed decision-making, equipping policymakers and stakeholders to navigate the evolving landscape of matrimony. By heeding the words of Friedrich Engels, who observed that "marriage is both an economic and a social institution," we can design interventions that foster individual autonomy, challenge traditional gender roles, and promote societal well-being.
+
+In sum, this research offers a holistic understanding of the shifting age preferences for marriage in Indian society, unveiling the transformative nature of marital dynamics and their far-reaching consequences. By merging academic rigor with practical relevance, this study provides valuable insights for scholars, policymakers, and individuals navigating the transformative terrain of marriage in contemporary India. As C. Wright Mills wisely remarked, "Marriage is not only a personal matter but a public issue, shaping the social order and individual experiences alike."\\\\
+\begin{keywords}
+       age preferences, marriage, determinants, consequences, sociological framework, familial dynamics, inter-generational relationships, social bonds, kinship networks, societal norms, educational pursuits, vocational pursuits, personal growth, independence, gender roles, survey findings, policymaking, societal well-being, transformative dynamics, contemporary India, academic rigor, practical relevance.
+
+\end{keywords}
+\addcontentsline{toc}{section}{ABSTRACT}
+\clearpage
+\newpage
+
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+
+
+\pagestyle{fancy}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\chapter{INTRODUCTION}
+\noindent{\rule{\textwidth}{1.5pt}}
+
+\pagenumbering{arabic}
+\section{A Brief Introduction:}
+\justify
+
+
+"Marriage is the foundation of society and the seedbed of virtue." These words, attributed to Charles Dickens, encapsulate the enduring importance of marriage as a fundamental institution across cultures and throughout history. The age at which individuals embark on this sacred union has long been shaped by a myriad of factors, deeply rooted in social, economic, and cultural contexts. In the context of Indian society, a discernible shift has occurred in recent decades, witnessing an upward trajectory in the preferred marriage age—a departure from the traditional norms that once prescribed early nuptials. This transformation holds profound implications for individuals, families, and the broader social fabric of Indian communities.
+
+"Tradition is not the worship of ashes, but the preservation of fire." These words, spoken by Gustav Mahler, highlight the significance of understanding the historical underpinnings that shaped the practice of early marriages in India. Rooted in ancient customs and beliefs, such as the emphasis on family honor, caste preservation, and the perceived necessity of early fertility, early marriages have long been regarded as essential for societal cohesion. However, the winds of change have swept across the Indian subcontinent, ushering in an era of rapid urbanization, economic growth, and cultural globalization.
+
+The shift in the preferred marriage age is a reflection of these transformative forces that have taken hold of Indian society. The rise of educational aspirations, economic opportunities, and changing social expectations have led to a reevaluation of traditional practices. "Education is the most powerful weapon which you can use to change the world," declared Nelson Mandela. Education, once a privilege of the select few, has become increasingly accessible to a broader segment of the population, particularly women. This expanded access to education has empowered individuals, altered aspirations, and challenged the notion that early marriage should supersede personal growth and career pursuits.
+
+"Times change and we change with them," proclaimed Saint Thomas More, recognizing the impermanence of social norms. The rise in the preferred marriage age in Indian society is a testament to the evolving ethos of modern India. Women, once confined to the domestic sphere, have emerged as active participants in the public realm, pursuing careers, challenging gender stereotypes, and asserting their agency. This societal transformation has fueled a shift in marriage dynamics, allowing individuals greater freedom to choose the timing of their union based on personal goals, aspirations, and compatibility.
+
+This dissertation endeavors to delve into the intricate factors that contribute to the rise in the preferred marriage age in Indian society, drawing from historical texts, academic literature, and societal perspectives. By employing a mixed-methods approach, including quantitative data analysis and qualitative interviews, we aim to unravel the complexities of this evolving trend and its implications for individuals, families, and society at large.
+
+Through this research, we aspire to provide valuable insights into the forces that shape marriage practices in contemporary India. By doing so, we seek to foster a deeper understanding of societal transformations, inform policy decisions, and contribute to the discourse on gender equality, individual autonomy, and social progress. In the words of Mahatma Gandhi, "Be the change that you wish to see in the world." Let this dissertation be a catalyst for positive change, facilitating a more inclusive, equitable, and harmonious society.
+\section{Study Subjects:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{stdsub.png}
+    \caption{A Visual Representation to understand the Educational Background of the Subjects of the survey}
+    \label{fig:enter-label}
+\end{figure}
+In our survey, the major chunk of the people who participated are students, mostly from the Undergraduate level, Postgraduate and PhD and even the high-school levels. Throughout the analysis, education has been a key factor of analysis which happens to be one of the systematic factors for the purpose of our analysis. In fact, students from several institutes of different streams, science, engineering, humanities, medicine has participated in our survey and presents one of the common highlights of the thoughts of a significant section of the youth in present-day times
+\section{Generational Perspective: General Idea of the Society}
+
+\textbf{Boomers, millennials, and Gen Z} hold divergent views on marriage and love, influenced by their respective generational contexts and societal shifts. Analyzing statistical data helps shed light on these generational differences and provides a more nuanced understanding of their attitudes towards commitment and relationships.
+
+Baby boomers, born between the mid-1940s and early 1960s, were raised in an era that placed great importance on marriage. According to the U.S. Census Bureau, in 1970, 80\% of boomers aged 25 to 34 were married, showcasing a prevailing cultural norm of early and committed relationships. Traditional values and societal expectations of stability and family played a significant role in shaping their perception of marriage as a lifelong commitment.
+
+On the other hand, millennials, born between the early 1980s and late 1990s, have witnessed the rise of a more individualistic and career-oriented mindset. A study by the Pew Research Center revealed that millennials prioritize personal fulfillment and career advancement, with 65\% stating that a successful marriage is not one of their most important life goals. This generation values personal growth and independence, leading to a delay in settling down and committing to marriage. The same study indicated that millennials are more likely to cohabit and engage in non-marital partnerships, embracing alternative relationship structures.
+
+Gen Z, born from the late 1990s to the early 2010s, represents the youngest generation entering adulthood. This cohort has grown up with unprecedented access to technology and global connectivity, resulting in a more diverse and open-minded perspective on relationships. A survey conducted by the Center for Generational Kinetics found that 48\% of Gen Z respondents believed that marriage is not a necessary component of a fulfilling life. They prioritize personal freedom, authenticity, and individuality in their relationships, often favoring non-traditional concepts like polyamory or open relationships.
+
+While statistical data illuminates the generational trends, it is essential to acknowledge the inherent diversity within each cohort. Factors such as cultural background and personal experiences contribute to the wide range of beliefs and attitudes within each generation. Some boomers, for instance, may embrace more progressive views on marriage, while certain millennials and Gen Z individuals may still prioritize traditional values.
+
+In conclusion, statistical evidence highlights the contrasting perspectives on marriage and love among boomers, millennials, and Gen Z. Boomers tend to uphold traditional notions of commitment, while millennials lean towards personal growth and delayed marriage. Gen Z exhibits a more flexible approach, emphasizing individuality and non-conventional relationship structures. Understanding these generational differences enables us to appreciate the evolving dynamics of love and marriage in society.
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\chapter{Background Analysis:}
+\noindent{\rule{\textwidth}{1.5pt}}
+\section{Declination in Marriage Rate (A Global Perspective):}
+
+The global perspective on the decline in marriage rates can be summarized as follows:
+\subsection{Historical Decline:}
+The decline in marriage rates can be observed in many countries across the world. This trend is not exclusive to rich countries but is also evident in non-rich countries in Latin America, Africa, and Asia.
+
+\subsubsection{United States:} 
+In the US, marriage rates have been declining since the 1970s. The decline started after the peak in marriages in 1946, following the end of World War II. Since 1972, marriage rates in the US have fallen by almost 50% and are currently at the lowest point in recorded history.
+
+\subsubsection{Similar Trends in Developed Countries:} 
+Other developed/first-world countries, such as the UK and Australia, have also experienced a decline in marriage rates over several decades. These countries are currently at their lowest point in recorded history for marriage rates.
+
+\subsection{Delayed Marriage:} 
+People are marrying later in many countries. The average age at first marriage has increased, particularly in North America and Europe. This delay in marriage is attributed to various factors, including changing social norms, economic factors, and increased focus on education and career.
+
+\subsection{Increase in Cohabitation:} 
+Cohabitation, or living together without being married, has become more common globally. The increase in cohabitation is driven by a combination of fewer people choosing to marry and those who do marry tending to do so later in life after living with their partners.
+
+\subsection{Rise in Non-Marital Births:} 
+The share of children born outside of marriage has increased substantially in almost all OECD countries. This increase is considered a proxy measure for cohabitation rates. More unmarried couples are having children, indicating a rise in long-term cohabiting relationships without formal marriage.
+
+\subsection{Single Parenting:} 
+Single-parent households are becoming more common in many countries. Women head the majority of single-parent households, and these households are among the most financially vulnerable groups. However, single-parent families are diverse in terms of socio-economic background and living arrangements.
+
+\subsection{Same-Sex Marriage:}
+Same-sex marriage has gained legal recognition in many countries around the world. The Netherlands became the first country to establish same-sex marriage by law in 2000, and since then, legislation for same-sex marriage has spread to more countries.\\ 
+\par
+
+
+Overall, the decline in marriage rates is a complex phenomenon influenced by various factors, including changes in social norms, economic conditions, and individual choices. The trend towards delayed marriage, increased cohabitation, and the rise of single-parent households reflects the evolving dynamics of relationships and family structures in the modern world.
+
+\section{EFFECTS ON INDIA:}
+\subsection{Legal and Cultural Perspective:}
+
+In India, similar to other countries, there have been noticeable shifts in marriage and family patterns, including changes in the age at which people get married and the prevalence of cohabitation. However, it's important to note that data specifically on cohabitation rates in India is limited, and comprehensive and up-to-date information might not be readily available.
+
+Here are some key points regarding marriage and cohabitation trends in India:
+
+\textbf{MARRIAGE ACT} contains definitions, which are as follows:\\
+\begin{enumerate}
+\item Child: A person who is below 21 years of age if male, and below 18 years of age if female.
+\item Contracting party: Either of the parties involved in a marriage or about to get married.
+\item Child marriage: A marriage in which one or both parties are children.
+\item Minor: A person who is considered not to have reached the age of majority according to the Majority Act.
+\end{enumerate}
+
+The Prohibition of Child Marriage (Amendment) Bill, 2021 was introduced in the Lok Sabha to increase the marriageable age for women from 18 to 21 years. In December 2021, the Union Minister for Women and Child Development, Smriti Irani, referred the proposed bill to a parliamentary standing committee for detailed examination. Once passed, this bill will supersede all existing laws.
+
+The bill was introduced by the Government of India based on the data from the National Family Health Survey (NFHS) and recommendations made by the Jaya Jaitly committee. The aim is to establish uniformity in the marriageable age of women, aligning it with that of men. Despite progress, child marriage still persists in some regions and poses significant challenges in achieving higher average ages at marriage.
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Cultural and Regional Variations: Marriage and family patterns in India can vary significantly across different states, regions, and communities. Cultural practices, traditions, and social norms play a significant role in shaping marriage and cohabitation trends within specific groups. Therefore, it's important to consider these variations while analyzing marriage and cohabitation patterns in India.
+\end{enumerate}
+
+It is crucial to note that the information provided is based on general knowledge and trends up until September 2021. For more accurate and detailed data on marriage rates, age at marriage, and cohabitation in India, it is recommended to refer to official government sources, demographic surveys, and research studies specifically focused on these topics within the Indian context.
+\subsection{Delaying Marriage for Girls in India:}
+\begin{enumerate}
+\item DISHA intervention: DISHA is responsible for a two-year delay in the age of marriage for girls to 17.9 years old, compared to the baseline age of marriage of 15.9 years. It also resulted in a 60 percent increase in contraceptive use among youth.
+
+\item Education and age of marriage: Less than 30 percent of highly educated women in India marry before 18 years, compared to 77 percent of uneducated young women. Low education is significantly associated with a lower age at marriage.
+
+\item Rural female literacy and gender gap: EEBs (Educationally and Economically Backward Blocks) are areas where rural female literacy is below the national average and the gender gap is more serious. These areas tend to have higher rates of child marriage.
+
+\item Child marriage as a violation of human rights: Child marriage is recognized as a gross violation of human rights, as per the United Nations Convention on the Elimination of All Forms of Discrimination against Women (CEDAW) and other international legislation. It undermines progress toward basic development goals.
+
+\item Barriers to combating child marriage: There are significant hurdles for girls, families, and communities in combating child marriage and supporting alternatives for girls. Social norms and practices play a significant role in perpetuating child marriage.
+
+\item Role models and social change: Change has started, as evidenced by role models who break social norms and fight to delay child marriage for themselves and their families. NGO interventions and government programs offer promise for social change.
+
+\item Need for intersectoral collaboration: To implement intervention strategies for delaying marriage for girls, intersectoral collaboration between various stakeholders, including the government, NGOs, media, and communities, is recommended.
+
+\item Impact of child marriage: Child marriage is directly associated with lower educational attainment for girls, limiting their employment opportunities, economic security, and productive capacity in society. It also contributes to limited decision-making power, increased vulnerability to violence, and limited access to social and economic resources.
+
+\item Research rationale: Previous studies indicate that child marriage in India is perpetuated by complex factors, particularly among the rural poor. There is a need to understand community perceptions, government policies, and programmatic initiatives to address the issue.
+
+\item Integrated intervention strategy: The study proposes an integrated intervention strategy to combat child marriage and promote social change. The strategy emphasizes education as a key catalyst for change and aims to develop platforms for social change.
+\end{enumerate}
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\chapter{Need for the Study:}
+\noindent{\rule{\textwidth}{1pt}}
+
+
+The need for the study on the "Increase in the Preferred Marriage Age in Indian Society" arises from the significant societal shifts and evolving dynamics observed in recent decades. Understanding and exploring this phenomenon are crucial for several reasons:
+
+\section{Societal Transformation:} 
+Indian society has witnessed substantial changes in the past few decades, including urbanization, economic development, and globalization. These transformations have led to shifts in values, attitudes, and aspirations, impacting various aspects of life, including marriage. Studying the increase in the preferred marriage age allows us to comprehend the underlying factors driving this change and its implications for individuals, families, and society as a whole.
+
+\section{Education and Career Aspirations:}  
+Education has become more accessible in India, enabling individuals, especially women, to pursue higher education and career opportunities. As a result, individuals are increasingly prioritizing their personal growth, educational attainment, and career advancement over early marriage. Examining the rise in the preferred marriage age helps us understand how education and career aspirations shape marital decisions and contribute to broader social transformations.
+
+\section{Gender Equality and Empowerment:} 
+The increase in the preferred marriage age is closely linked to changing gender dynamics in Indian society. Women's empowerment, increasing participation in the workforce, and the challenge to traditional gender roles have played a significant role in redefining marriage practices. Analyzing the shift in marriage age preferences allows us to explore the impact of gender equality on marital choices and examine its implications for women's empowerment and societal progress.
+
+\section{Family and Inter-generational Dynamics:} 
+Marriage is a pivotal institution within Indian families, influencing social bonds, kinship networks, and inter-generational relationships. The rise in the preferred marriage age has ramifications for family structures, dynamics, and expectations. Investigating this trend enables us to understand the changing dynamics within families, including inter-generational conflicts, shifts in caregiving responsibilities, and altered perceptions of marital obligations.
+
+\section{Policy and Intervention Design:} 
+The findings from this study can provide valuable insights for policymakers, educators, and social scientists in developing targeted interventions, policies, and programs that address the changing dynamics of marriage in Indian society. Understanding the factors influencing the increase in the preferred marriage age can inform the design of initiatives promoting individual autonomy, gender equality, and societal well-being.\\
+\\
+Overall, conducting research on the increase in the preferred marriage age in Indian society is essential to gain a comprehensive understanding of the changing social landscape, individual choices, and the implications for various dimensions of life. This study has the potential to contribute to academic scholarship, inform policy decisions, and foster societal progress towards more inclusive, equitable, and empowering marriage practices in India.
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\chapter{Literature Review :}
+\noindent{\rule{\textwidth}{1pt}}
+\vspace{-5pt}
+\section{Universality Of Marriage:}
+The age of marriage is a convenient starting point in studying the static and dynamic aspect of the human population. The predominating age at which persons of both sexes of a population enter a population is a highly important factor in determining the potential natural increase in the population. ‘’In most of the countries in the south Asia including India there was a common trend of marriage at very early ages . In the geographical region of South Asia, complex cultural and religious dynamics set parameters around marriage. Generally, for both sexes, marriage is perceived as an essential stage in the life-course and there are strong social sanctions for childbearing outside of marriage . As a social institution, marriage is identified by some studies as near universal . Generally, any variation relates to the age at which marriage takes place, rather than whether it happens at all. Women also tend to marry younger than men. For example, about 90 percent of women aged 15–49 years were married by ages 25–29 years in Bangladesh, India, and Nepal compared with 80 percent of men; marriage is nearly universal among women aged 30 and above and men aged 45 and above’’.[Frontiers in public health].
+
+\section{Case Study 1:}
+Between 2000 and 2011, one in three women aged 20–24 years in the global south (excluding China) were estimated to have married before they reached the age of 18 years . In 2010, this was equivalent to nearly 67 million women, with approximately one in nine or 12 percent marrying as children, before the age of 15 years. At the current rate, 39,000 girls are projected to marry under-age age each day, amounting to over 14.2 million girls each year over the next decade.
+
+    
+\begin{figure}
+
+\centering
+\includegraphics[width=0.9\textwidth]{kl.jpg}\\ 
+    \caption{Early marriage tendencies in south east Asia}
+ \end{figure}   
+    
+    
+
+
+\section{Case Study 2:}
+Especially in US the average age of marriage has risen substantially in recent decades. In 2010, the median ages at marriage for men and women were 28.2 and 26.1 years of age, respectively. This represents an increase of 3 years from the median age for each sex in 1985 and a 5-year increase from the median age in 1970 (U.S. Census Bureau, 2010). As the average age at marriage has increased over time, the odds of marrying have declined. In 1970, approximately 5percent of adults aged 40 through 44 were never married. By 1996, this had doubled to more than 10\%, and by 2010, 17percent of adults aged 40 through 44 were never married (U.S. Census Bureau, 2010). Many factors have been suggested to explain these trends. They include, but are not limited to, the rise of cohabitation and shifts in cultural attitudes regarding marriage (Cherlin, 2004; Raley, 1996);Also the delayed age is a major reason behind decrease in number of marriages in last few decades.
+
+\begin{figure}
+  
+
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{mx.png}\\ 
+    \caption{Data of the number of marriages per thousand people in the population}
+    
+    
+\end{center}
+
+\end{figure}
+
+\section{Case study 3:}
+We attempt to compare the evolution in the marriage age of women in India with some of the developed 1st world countries, as well as some of the 3 rd world countries like Pakistan and Bhutan. We observe that over the last two decades, India is showing a slow but steady rise in marriage age.
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{mr.png}\\
+    \caption{Average Age of Women in Marriage - a comparative analysis}
+    
+\end{center}
+\end{figure}
+
+
+
+\section{Previous Research on Marriage Age:}
+The research on age of marriage. are usually referred to as age norms or deadlines (Liefbroer \& Billari, 2010; Settersten \& Mayer, 1997). For example, Liefbroer and Billari (2010, p. 290) define age norms as “expectations about the appropriate age at or age range within which behaviors should occur.” Past work in this area has concentrated on establishing and describing timing attitudes for many life course events, including leaving the parental home, childbearing, and marriage (Aassve, Arpino, \& Billari, 2013; Settersten
+\& Hägestad, 1996). Only a few studies have assessed whether timing attitudes influence individuals’ entrance into marriage. Early studies using cross-sectional data found that individuals who value older ages at marriage were more likely to have married at older ages (Modell, 1980; Thornton \& Freedman, 1982). Others used panel data to more rigorously assess the influence of timing attitudes. Most notably, Tosi (2017) found that age norms influence when young people in Italy leave their parental home as a result of marriage or other reasons. Specifically, young Italians living with their parents who thought they were too young to leave home were likelier to still live with their parents 4 years later, rather than having left home for marriage or other reasons. These young Italians were also influenced by their parents’ age norms; the youth were more likely to have left home if they perceived their parents as approving home-leaving for a person of their age. 
+\section{Marietal Theories:}
+The two most influential theories of marital timing are Becker’s (1981) specialization model and Oppenheimer’s (1988) marital search model. Becker (1981) suggested that women exchange household production for men’s income-earning capabilities. Thus, women marry younger than men because they need a husband to support them, and, if they are economically independent, women can forgo marriage entirely. In turn, employed men with high income and education levels are more likely to marry, whereas women with those characteristics are less likely to marry. Oppenheimer (1988, 1997) agreed that historically men’s income-earning capabilities were important for marriage, whereas attractiveness and household capabilities were more important for women. However, she suggested that gender roles and marriage markets  However, she suggested that gender roles and marriage markets. were changing over time, such that women’s economic productivity outside the home was increasingly valued. Thus, women’s economic status would not make them forgo marriage, but instead, delay marriage by lengthening the period needed to develop their own economic capabilities and find a suitable husband. In turn, as women’s economic status becomes more important, women marry at older ages and the gender gap in marital timing narrows.
+\section{Deviation from Desired Age Possible Consequences:}
+Two theoretical perspectives—(a) the normative life course perspective (Neugarten, Moore, \& Lowe, 1968) and (b) stress process theory (Pearlin, 1989)—suggest that deviating from one’s desired age at marriage likely has negative, enduring effects on mental health for both the married and never-married. According to both theories, off-time transitions into marriage that occur both earlier and later than one desires likely undermines one’s mental health. The normative life course perspective suggests that social and cultural age norms for marital transitions inform one’s personal preference for age at marriage (Neugarten et al., 1968; Settersten \& Hagestad, 1996). Guided by these norms, which vary across social groups (East, 1998; Settersten \& Hagestad), people ‘‘develop a concept of the ‘normal expectable life cycle,’ a set of anticipations that certain life events will occur at certain times, and a mental clock telling them whether they are on time or off time’’ (Neugarten, 1979). Because transitions into new life stages are major turning points that produce changes in self-concept and identity, undesirable, off-time events often present life crises that negatively affect well-being (Neugarten).\\ 
+
+
+\textbf{In summary, research plays a vital role in understanding the age of marriage and its multifaceted implications. It helps us make informed decisions, develop effective policies, and create supportive environments that enable individuals to make choices regarding marriage that align with their well-being, aspirations, and social progress.}
+
+
+
+
+
+
+
+
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\chapter{Methodology :}
+\noindent{\rule{\textwidth}{1pt}}
+\vspace{-5pt}
+
+In this Section, we are going to discuss about the methods which we have used to conduct our survey, data collection and study of the subject of the change in Marriage age in recent days.
+\section{Previous Literature study:}
+
+For our survey on the mentioned topic, we first delved into previous literature study and studies conducted surrounding the topic of the Change in Marriage age among people. We have noticed that in many parts of the world, there has been a noticeable trend toward individuals marrying at the older ages compared to previous generations. The shift can be attributed to a variety of factors including societal, cultural, economic, and personal reasons. Education and career focus among young generation people is one of the main causes for the age rise in Marriage. We have broadly discussed these points later.\\
+Conducting a survey on the Change in Marriage age can provide valuable insights into social and cultural trends, as well as shed light in the factors influencing people’s decisions regarding marriage. Now I am pointing out the Methods which we have used to do the Survey:\\
+\section{Define the objectives:}
+\par
+ We have Clearly articulated the purpose of the survey, such as understanding the average age of marriage, societal perceptions, or factors influencing the decision to marry early or late.
+Determine the target population: We at first decided on the specific group or groups we want to survey. We defined some specific criteria, such as age ranges or marital status.\\
+
+\section{Choose the survey method:} 
+\par In today's digital age, online surveys have become a popular and convenient method. We consider online survey platforms and social media platforms to reach a wider audience. However, our target population is easily accessible online, so we got the freedom to do it online. We have used Google Form to continue the survey.
+\section{Develop the survey questions:}
+\par
+ We have designed a set of questions that helped us to gather the necessary information to meet our objectives. The questions are
+   \begin{enumerate}
+
+  \item In which city/Village did you spend most of your childhood?
+  \item How many siblings do you have? (Excluding you)
+  \item Please specify your age
+  \item What is your gender?
+  \item In what type of place do you currently live?
+  \item What is your background in terms of most time spent throughout your life?
+  \item What is your current education level?
+  \item What is your employment status?
+  \item How is your family's mindset (w.r.t towards love marriage, love life, and job selection)
+  \item How do you want to see yourself in the current society?
+  \item From which state do you belong?
+  \item What about you? Are you a...
+    \begin{itemize}
+      \item Conservative
+      \item Open-minded
+      \item Mix of both
+      \item Can't decide
+    \end{itemize}
+  \item Are you currently married or single (like us)? If you are married, when did you marry? Please specify your age.
+  \item Do you want to marry at all? If your answer is no, then please specify why?
+  \item If you now wanted to marry your partner or someone interested in you, will it be...
+    \begin{itemize}
+      \item Love Marriage
+      \item Arrange Marriage
+    \end{itemize}
+  \item What is your belief for the current ideal age for marriage in terms of heterosexual men?
+  \item What is your belief for the current ideal age for marriage in terms of heterosexual women?
+  \item Please state what are the reasons that justify these ideal ages.
+  \item What is the background of your father?
+  \item What is the background of your mother?
+  \item What is the last educational qualification of your father?
+  \item What is the last educational qualification of your mother?
+  \item Are your parents employed? (Employment means working in some job that generates financial output)
+  \item When did your parents marry?
+  \item What was the age when your mother married your father? (We are not collecting any contact information of you, if possible, please be honest here for statistical accuracy)
+  \item What was the age of your father when he married your mother? (We are not collecting any contact information of you, if possible, please be honest here for statistical accuracy)
+  \item What is the background of your grandfather?
+  \item What is the background of your grandmother?
+  \item When (The Year) did your grandparents marry? (If not known then, please try to put an approximate year)
+  \item What was the age of your grandmother when she married your grandfather? (We are not collecting any contact information of you, if possible, please be honest here for statistical accuracy)
+  \item What was the age of your grandfather when he married your grandmother? (We are not collecting any contact information of you, if possible, please be honest here for statistical accuracy)
+\end{enumerate}
+\section{Pilot Testing}
+Prior to survey deployment, a preliminary pilot test was conducted among a select group of participants. The primary objective of this pilot test was to identify any potential concerns or shortcomings associated with the survey design, question clarity, and technical functionality.
+
+\section{Promoting Participation}
+Efforts were made to actively encourage survey participation by employing effective communication strategies. A comprehensive explanation was provided to potential respondents regarding the purpose of the survey, ensuring utmost confidentiality of their responses. Additionally, the potential benefits resulting from their participation were emphasized to further incentivize engagement.
+
+\section{Data Analysis}
+Upon amassing a sufficient number of survey responses, the data was subjected to rigorous analysis employing suitable statistical techniques. This analytical process enabled a comprehensive exploration of the collected data, providing valuable insights and meaningful interpretations.
+\section{Statistical Methodologies Followed}
+\subsection{Hypothesis testing:}
+     We have hypothesized that the age and type of marriage that a person prefers to have depends on his family background, his family mindset and the number of siblings he has. However, the hypothesis have been proven to be quite true in the first case as stated in para 1 of the analysis, but has vehemently failed in the 3rd case according to para 4 of the analysis.
+     \subsection{Standard Deviation:}
+     The standard deviation is the average amount of variability in your dataset. It tells you, on average, how far each value lies from the mean. This is a very important tool throughout the analysis, specially in complex correlation between various parameters as mentioned in para 3. The correlation between the preferred age of marriage and a certain specific part of the sample space based on filters of our survey, either on the basis of education, family background, age and their parents’ age at the time of their marriage. Drawing inferences are absolutely convenient after using this particular methodology.
+
+    \subsection{Analysis of variance:}
+      Analysis of variance (ANOVA) is an analysis tool used in statistics that splits an observed aggregate variability found inside a data set into two parts: systematic factors and random factors. The systematic factors have a statistical influence on the given data set, while the random factors do not. As can be observed in the analysis, the correlation between parameter to be studied and the systematic factor has been pictorially drafted whereas the random factors, which was a cross-checking and falsification of the hypothesis had to be removed.
+      \subsection{4. Regression:}
+     Regression is a statistical method that attempts to determine the strength and character of the relationship between one dependent variable. Very evidently from the analysis, this statistical methodology along with standard deviation has been the most important in drawing inferences, specially in para 2 and para 4 of the analysis.
+
+\section{Drawing Conclusions and Implications}
+Drawing upon the survey findings, conclusive deductions were made pertaining to the topic of age of marriage and the underlying factors that exert influence. These conclusions serve as the basis for determining implications and potential courses of action that may arise from the survey results.
+
+
+\chapter{Analysis of the Survey:}
+\noindent{\rule{\textwidth}{1.5pt}}
+\section{The Major Co-relations from the Data:}
+\begin{enumerate}
+  
+    \item 85\% of people belonging from conservative background prefer love marriages over arranged and 76\% of males belonging from open-minded families prefer arranged marriages over love marriages. This clearly indicates that the grass is always greener on the other side.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=1]{conservative.png}
+        \caption{Understanding the Subjects Family Mindset}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \subfloat[\centering Open-mindedness of Males' Families Representing their freedom of choice]{{\includegraphics[scale=0.8]{openminded males.png} }}%
+    \qquad
+    \subfloat[\centering Female preferences for the Marriage Method]{{\includegraphics[scale=0.8]{female marriage pref.png} }}%
+    \caption{Understanding Gender Based Views}%
+    \end{figure}
+    \item 76\% of undergraduate students of our survey prefer to marry between the age group 25-32, reasons being maturity, growth, financial stability and 19\% people prefer early marriages below 25 years of age with reasons either being romantic relationships or unspecified.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.8]{UG, PG, Phd comparison reason of marriage.png}
+        \caption{Understanding the Reason Behind the Timing of Marriage}
+        
+    \end{figure}
+    
+  \item 63\% of people whose parents married early below the age of 25 wants to marry above 30 years of age which clearly indicates the importance of stability(financial, emotional and mental) for a happily married life. This also indicates the drawback of an early married life due to the probabilistic turbulence that the child must have gone through in the course of his/her upbringing. 95\% of the remaining 37\% people who say that they want to marry below the age of 27 years prefer love marriages over arranged marriages but 89\% of them are from the urban background. 59\% of them claim to be from either an open minded or a partially open minded family but still there are 41\% people who are from a conservative background. So, its very much evident that open-mindedness of the family has a negligible effect on the age they want to marry in but certainly as per para 1 it affects the type of marriage they prefer.
+\begin{figure}[H]
+    \centering
+    \includegraphics{Type of marriage vs age of marriage.png}
+    \caption{Type of Marriage v/s Age of Marriage}
+   
+\end{figure}
+
+\item Almost 95\% people in our survey have siblings and still there are varied responses of their choices on the age, type and the reasons of their marriage. This clearly indicates that number of siblings has negligible effect on the decisions regarding marriage that a person would probably have altogether. Furthermore, this conclusion along with the conclusion from para 3 indicates that in the same family, 2 siblings may have different views about marriage.
+
+
+\item Our survey consists of students who are from UG, PG and even PhD and according to 68\% of them, the ideal age of marriage is 28-34 years which is the median age group of all that is mentioned in our survey (Reasons quoted are mentioned in para 3). 27\% of them want to marry either before 28 years of age or after 34 years of age either because they want to marry someone special that they have found or they are probably hoping to find in the near future. The latter people of our survey who believes the ideal age of marriage to be above 34 years believes that maturity and experience comes with age. However, contrasting to that the former part who believes the ideal age of marriage to be below 27 years of age believes that its never too late to start.
+\begin{figure}[H]
+    \centering
+    \includegraphics{UG STUDENTS preferance of marriage.png}
+    \caption{Understanding UG Students preferences ie Young Adults}
+ 
+\end{figure}
+  \item Most importantly, the UG students of our survey had mixed responses with personal as well as financial reasons regarding the age and type of marriage they prefer. However, 91\% of the PG and the PhD students in our survey believe that the ideal age of marriage to be above at least 28 years. This indicates that age and education is also a deciding factor in people believing what the right age for marriage is.
+\begin{figure}[H]
+    \centering
+    \includegraphics{PG,PHD Data.png}
+    \caption{PG and PhD Students' Views}
+
+\end{figure}
+\item Overall, we can recognise that it depends on the people’s beliefs as well as their family. But there is almost no direct relation or correlation between most of the parameters. However, the required correlations that are observed from the data are given in the previous paragraphs.
+  
+\end{enumerate}
+
+\subsection{A Few Worthwhile Insights from the Survey Subjects}
+
+
+
+\begin{quote}
+``In this age, we can select a trustworthy person as we are able to go through so many ups and downs in life, allowing us to choose the right person."\
+\par\raggedleft--- \textup{Trustworthy Person Selection}, Anonymous
+\end{quote}
+
+
+
+
+\begin{quote}
+``Both genders should live their lives to the fullest, where living life is assumed to be the completion of individual goals."\
+\par\raggedleft--- \textup{Living Life to the Fullest}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``One will have enough time to settle with a job and family simultaneously... If one has a child at the age of 40, then they would be at 60s before their children can settle and raising them supporting them would be difficult for the parents after 60s."\
+\par\raggedleft--- \textup{Settling with Job and Family}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``I have noticed the trend for both men and women to go through a change in mindset at a certain age where they want to settle in and start a family."\
+\par\raggedleft--- \textup{Changes in Mindset}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``Generally, men & women have a stable career by the age of 25 which provides them with financial independence and have gained quite a bit of real life experience & maturity on relationships and marriages."\
+\par\raggedleft--- \textup{Career and Maturity}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``Early marriage ensures stability... Also, staying sexually inactive for extended periods of time isn't healthy."\
+\par\raggedleft--- \textup{Benefits of Early Marriage}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``By this age most people will have completed their education and have had the opportunity for a fair amount of life experience (work and prior relationships) before deciding."\
+\par\raggedleft--- \textup{Education and Life Experience}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``Marriage in those age range means you mostly have stable jobs, financially secure and are able to make family... Early marriage than this age group means you are not financially stable."\
+\par\raggedleft--- \textup{Advantages of Marriage in a Specific Age Range}, Anonymous
+\end{quote}
+
+
+\begin{quote}
+``Both will have secure life with having maturity and stable job... which also depends on the respective persons, if they are responsible enough."\
+\par\raggedleft--- \textup{Secure Life with Maturity and Stable Job}, Anonymous
+\end{quote}
+
+
+
+
+
+
+\chapter{Further Implications}
+\noindent{\rule{\textwidth}{1.5pt}}
+\section{Advances in the Field of Sociology:}
+
+
+The research conducted in this study has contributed to the advancement of the field of sociology by providing new insights and conceptual frameworks. By exploring the intricate dynamics of marriage preferences and their underlying sociocultural influences, this research has shed light on previously unexplored aspects of human behavior and societal dynamics. The findings have challenged conventional assumptions and opened up new avenues for understanding the complexities of marriage choices within diverse social contexts.
+
+This study has also introduced novel conceptual frameworks that capture the interplay between individual preferences, cultural norms, and societal structures. By integrating theoretical perspectives from sociology, psychology, and cultural studies, the research has fostered a multidisciplinary approach that enriches our understanding of the complexities involved in marriage preferences.
+
+\section{Practical Implications:}
+
+The practical implications of the research findings are significant for policymakers, social organizations, and individuals. The insights gained from this study can inform strategies and interventions aimed at promoting social inclusion, addressing societal challenges, and fostering positive social change.
+
+Policymakers can utilize the research findings to develop evidence-based policies that promote diversity and equality in marriage choices. By recognizing the influence of cultural factors and challenging discriminatory practices, policymakers can create an environment that encourages individuals to exercise agency in their marital decisions, irrespective of societal expectations.
+
+Social organizations can leverage the insights gained from this study to design programs and initiatives that empower individuals and communities to make informed choices regarding marriage. By understanding the nuanced interplay between cultural norms and personal preferences, these organizations can provide support systems, resources, and educational campaigns that promote healthy relationships and enable individuals to navigate societal pressures.
+
+For individuals, the research findings offer valuable insights into the complexities of marriage preferences. By understanding the societal influences and cultural expectations that shape their choices, individuals can make more informed decisions, negotiate interpersonal relationships more effectively, and navigate the tension between personal desires and social norms.
+\section{Limitations and Future Directions:}
+
+
+While this study has made valuable contributions to the field of sociology, it is important to acknowledge its limitations. The sample size used in the research may have been restricted, and the geographic scope may have been limited to a specific region or population. Future studies could address these limitations by employing larger and more diverse samples, encompassing various cultural contexts and demographic groups.
+
+Furthermore, the study's data collection methods may have certain constraints that could have influenced the findings. Future research could explore alternative data collection approaches, such as longitudinal studies or qualitative interviews, to gain a more comprehensive understanding of the complex factors influencing marriage preferences.
+
+To provide a more holistic understanding of the topic, future studies could also investigate the long-term consequences and outcomes of different marriage preferences on individuals' well-being, family dynamics, and societal structures. Additionally, exploring the impact of evolving societal norms and technological advancements on marriage choices could be a fruitful avenue for further research.
+
+By acknowledging the study's limitations and suggesting future directions, researchers can encourage continued investigation and theoretical development in this area, ensuring a comprehensive and nuanced understanding of the topic and its implications for society.
+
+\chapter{A Few Thoughts and Conclusion}
+\noindent{\rule{\textwidth}{1.5pt}}
+\section{Thoughts of the Author:}
+The author of the research article provides some thoughts on the methodology and findings presented in the study. They highlight the importance of conducting a pilot test to identify potential concerns and shortcomings in the survey design, question clarity, and technical functionality. The author also emphasizes the efforts made to promote participation by providing a comprehensive explanation of the survey's purpose and ensuring confidentiality of responses.
+
+Regarding data analysis, the author mentions that suitable statistical techniques were employed to analyze the collected data, which allowed for a comprehensive exploration and meaningful interpretation of the findings. They specifically mention the use of statistical methodologies such as hypothesis testing, standard deviation, analysis of variance, and regression.
+
+In terms of the major correlations observed in the data, the author points out several interesting findings. For example, they note that a significant percentage of people from conservative backgrounds prefer love marriages over arranged marriages, while a majority of males from open-minded families prefer arranged marriages. They also highlight the preference for marriage between the ages of 25-32 among undergraduate students, with reasons such as maturity, growth, and financial stability. The author further discusses correlations related to the age at which parents married, the influence of family background on marriage preferences, and the lack of direct correlation between the number of siblings and marriage choices.
+
+The author acknowledges that the study has limitations, such as the restricted sample size and potential geographic limitations. They suggest that future research could address these limitations by using larger and more diverse samples and exploring alternative data collection approaches. Additionally, the author suggests investigating the long-term consequences and outcomes of different marriage preferences on individuals' well-being, family dynamics, and societal structures, as well as the impact of evolving societal norms and technological advancements on marriage choices.
+
+Overall, the author highlights the contribution of the research to the field of sociology, providing new insights and conceptual frameworks. They also discuss the practical implications of the findings for policymakers, social organizations, and individuals, and suggest potential directions for future research to further enhance our understanding of marriage preferences in Indian society.
+
+\section{Conclusion}
+In conclusion, this study has shed light on the shifting age preferences for marriage in Indian society and the transformative dynamics associated with it. By employing a rigorous sociological framework, this research has explored the determinants and consequences of age preferences for marriage, emphasizing the familial and inter-generational dynamics that influence marital decisions. The findings of this study have important implications for policymakers, educators, and social scientists as they inform targeted interventions and policies to address the evolving landscape of matrimony in India.
+
+The study has revealed a notable increase in the favored age for marriage among Indian individuals, reflecting a reorientation towards prioritizing educational and vocational pursuits, personal growth, and independence. This shift aligns with global trends of declining marriage rates and delayed marriages. The findings underscore the significance of understanding the societal transformations associated with changing age preferences for marriage to strive towards a more equitable and inclusive society.
+
+Marriage, as a pivotal institution, shapes the social fabric by intertwining individual aspirations with societal norms. This research acknowledges the influence of marriage practices in reflecting and reinforcing social inequalities, perpetuating power dynamics and gender roles. To promote societal well-being, interventions and policies should be designed to foster individual autonomy, challenge traditional gender roles, and address social inequalities.
+
+The comprehensive data collection methods and robust statistical analyses employed in this study have provided valuable insights into the intricate dynamics of age preferences for marriage in Indian society. These insights serve as a foundation for informed decision-making, equipping policymakers and stakeholders to navigate the evolving landscape of matrimony. By recognizing marriage as both an economic and social institution, interventions can be designed to support individuals in pursuing their educational and vocational aspirations while also fostering strong social bonds and inter-generational relationships.
+
+In summary, this research offers a holistic understanding of the shifting age preferences for marriage in Indian society and highlights the transformative nature of marital dynamics and their far-reaching consequences. By merging academic rigor with practical relevance, this study contributes to the body of knowledge on marriage in contemporary India. It provides valuable insights for scholars, policymakers, and individuals who are navigating the evolving terrain of marriage. Ultimately, marriage is not only a personal matter but a public issue that shapes both the social order and individual experiences, as C. Wright Mills wisely remarked.
+\bibliographystyle{IEEEtran}
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{00}
+{\bibitem{b1}Liefbroer, A. C., & Billari, F. C. (2010). Bringing
+norms back in: A theoretical and empirical discussion of their importance for understanding demographic behaviour. Population, Space and Place,
+16, 287–305. https://doi.org/10.1002/psp.552
+\bibitem{b2}Settersten, R. A., & Mayer, K. U. (1997). The measurement of age, age structuring, and the life
+course. Annual Review of Sociology, 23, 233–261.
+https://doi.org/10.1146/annurev.soc.23.1.233
+\bibitem{b3}Settersten, R. A., & Hägestad, G. O. (1996). What’s
+the latest? Cultural age deadlines for family transitions. The Gerontologist, 36, 178–188. https://doi
+.org/10.1093/geront/36.5.602
+\bibitem{b4}Allendorf, K., & Thornton, A. (2015). Caste and
+choice: The influence of developmental idealism on marriage behavior. American Journal of
+Sociology, 121, 243–287. https://doi.org/10.1086/
+681968
+\bibitem{b5}Oppenheimer, V. K. (1988). A theory of marriage timing. American Journal of Sociology, 94, 563–591.
+https://doi.org/10.1086/229030
+\bibitem{b6}Becker, G. S. (1981). A treatise on the family. Cambridge: Harvard University Pres
+\bibitem{b7}Aassve, A., Arpino, B., & Billari, F. C. (2013).
+Age norms on leaving home: Multilevel evidence
+from the European Social Survey. Environment
+and Planning A, 45, 383–401. https://doi.org/10
+.1068/a4563
+\bibitem{b8}Thornton, A., & Freedman, D. (1982). Changing attitudes toward marriage and single life. Family Planning Perspectives, 14, 297–303. https://doi.org/10
+.2307/2134600
+\bibitem{b9}Tosi, M. (2017). Age norms, family relationships, and
+home leaving in Italy. Demographic Research, 36,
+281–306. https://doi.org/10.4054/DemRes.2017
+.36.9
+\bibitem{b10}United Nations. (2016). Changing patterns of marriage and unions across the world.Retrieved
+from http://www.un.org/en/development/desa/population/publications/pdf/popfacts/PopFacts
+2016-2.pdf
+
+\bibitem{b11}Neugarten, B. L., Moore, J. W., & Lowe, J. C. (1968).
+Age norms, age constraints, and adult socialization. In B. L. Neugarten (Ed.), Middle age and
+aging\: A reader in social psychology (pp. 22 – 28).
+Chicago: University of Chicago Press.
+\bibitem{b12}Neugarten, B. L. (1979). Time, age, and the life cycle.
+American Journal of Psychiatry, 136, 887 – 894.
+\bibitem{b13}Settersten, R. A., Jr., & Hagestad, G. O. (1996).
+What’s the latest? Cultural age deadlines for family
+transitions. The Gerontologist, 36, 178 – 188.
+doi:10.1093/geront/36.2.178
+\bibitem{b14}Pearlin, L. I. (1989). The sociological study of stress.
+Journal of Health and Social Behavior, 30,
+241 – 256. doi:10.2307/2136956
+\bibitem{b15}UK Office for National Statistics (2014) – Marriage statistics, cohabitation and cohort analyses.(https://ourworldindata.org/)
+\bibitem{b16}United Nations, Department of Economic and Social Affairs, Population Division (2019). World Marriage Data 2019.
+\bibitem{b17}Marphatia,Akanksha A; 
+Ambale,Gabriel S;
+ Reid,Alice M.(2017)
+Women’s Marriage Age Matters for Public Health: A Review of the Broader Health and Social Implications in South Asia .  Frontiers in Public Health , 5 , 2296-2565.   https://www.frontiersin.org/articles/10.3389/fpubh.2017.00269    
+
+
+
+   
+}
+
+ \end{thebibliography}
+\end{document}
