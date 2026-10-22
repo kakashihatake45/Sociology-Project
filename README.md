@@ -1,2 +1,2 @@
 # Sociology-Project
-This is a project done by me and my team as a part of my sociology coursework. Here we make a survey of preferred marriage age for people from different backgrounds and compare it with the previous generations.
+We did this as part of first year sociology coursework. Here we make a survey of preferred marriage age for people from different backgrounds and compare it with the previous generations. I contributed in the literature review. 
